@@ -43,15 +43,15 @@ function App() {
     window.location.href = TELEGRAM_CHANNEL_URL;
   };
 
-  // useEffect(() => {
-  //   const timer = window.setTimeout(() => {
-  //     redirectToTelegram()
-  //   }, REDIRECT_DELAY_MS)
+  useEffect(() => {
+    const timer = window.setTimeout(() => {
+      redirectToTelegram();
+    }, REDIRECT_DELAY_MS);
 
-  //   return () => {
-  //     window.clearTimeout(timer)
-  //   }
-  // }, [])
+    return () => {
+      window.clearTimeout(timer);
+    };
+  }, []);
 
   const renderIcon = (iconName) => {
     const commonProps = {
